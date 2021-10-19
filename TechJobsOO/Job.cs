@@ -40,7 +40,7 @@ namespace TechJobsOO
      
         public override string ToString()
         {
-            string tName, tEmployer, tLocation, tType, tCompetency; //t = temporary
+            string tName, tLocation, tType, tCompetency; //t = temporary
             bool data_available = false; 
             if (!string.IsNullOrEmpty(Name))
             {
@@ -51,19 +51,22 @@ namespace TechJobsOO
             {
                 tName = "Data Not Available";
             }
+            /*
             if (!string.IsNullOrEmpty(EmployerName.Value))
             {
                 tEmployer = EmployerName.Value;
                 data_available = true;
 
             }
+            
             else
             {
                 tEmployer = "Data Not Available";
             }
-            if (!string.IsNullOrEmpty(JobType.Value))
+            */
+            if (!string.IsNullOrEmpty(JobType.value))
             {
-                tType = JobType.Value;
+                tType = JobType.value;
                 data_available = true;
 
             }
@@ -81,9 +84,9 @@ namespace TechJobsOO
             {
                 tCompetency = "Data Not Available";
             }
-            if (!string.IsNullOrEmpty(EmployerLocation.Value))
+            if (!string.IsNullOrEmpty(EmployerLocation.value))
             {
-                tLocation = EmployerLocation.Value;
+                tLocation = EmployerLocation.value;
                 data_available = true;
 
             }
@@ -98,7 +101,7 @@ namespace TechJobsOO
             }
             else
             {
-                return $"\nID: {Id} \nName: {tName} \nEmployer: {tEmployer} \nLocation: {tLocation} \nPosition Type: {tType} \nCore Competency: {tCompetency}\n";
+                return $"\nID: {Id} \nName: {tName} \nEmployer:  \nLocation: {tLocation} \nPosition Type: {tType} \nCore Competency: {tCompetency}\n";
 
             }
         }
