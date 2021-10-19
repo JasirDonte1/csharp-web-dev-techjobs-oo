@@ -37,7 +37,73 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
+     
+        public override string ToString()
+        {
+            string tName, tEmployer, tLocation, tType, tCompetency; //t = temporary
+            bool data_available = false; 
+            if (!string.IsNullOrEmpty(Name))
+            {
+                tName = Name;
+                data_available = true;
+            }
+            else
+            {
+                tName = "Data Not Available";
+            }
+            if (!string.IsNullOrEmpty(EmployerName.Value))
+            {
+                tEmployer = EmployerName.Value;
+                data_available = true;
 
+            }
+            else
+            {
+                tEmployer = "Data Not Available";
+            }
+            if (!string.IsNullOrEmpty(JobType.Value))
+            {
+                tType = JobType.Value;
+                data_available = true;
+
+            }
+            else
+            {
+                tType = "Data Not Available";
+            }
+            if (!string.IsNullOrEmpty(JobCoreCompetency.ToString()))
+            {
+                tCompetency = JobCoreCompetency.ToString();
+                data_available = true;
+
+            }
+            else
+            {
+                tCompetency = "Data Not Available";
+            }
+            if (!string.IsNullOrEmpty(EmployerLocation.Value))
+            {
+                tLocation = EmployerLocation.Value;
+                data_available = true;
+
+            }
+            else
+            {
+                tLocation = "Data Not Available";
+            }
+
+            if (!data_available)
+            {
+                return "\nOOPS! This job does not seem to exist.\n";
+            }
+            else
+            {
+                return $"\nID: {Id} \nName: {tName} \nEmployer: {tEmployer} \nLocation: {tLocation} \nPosition Type: {tType} \nCore Competency: {tCompetency}\n";
+
+            }
+        }
+
+      
 
     }
 }
